@@ -1,6 +1,10 @@
 import os
 import streamlit as st
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+
+loader = PyPDFLoader("duong_dan_toi_file.pdf")
+pages = loader.load_and_split()
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
